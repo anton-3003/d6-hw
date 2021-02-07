@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+	<title>Форма создания и редактирования Авторов</title>
+</head>
+<body>
+	<div class="container">
+		<div class="row" style="margin-top: 20px"></div>
+		<form method="post">
+			<div class="form-group">
+				{% csrf_token %}
+				{{ form.as_p }}
+			</div>
+			<input type="submit" class="btn btn-primary" value="Сохранить">
+		</form>
+	</div>
+</body>
+</html>
