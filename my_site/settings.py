@@ -27,11 +27,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECRET_KEY = os.environ.get('SECRET_KEY')
 SECRET_KEY = '8o7*^_31s87r*xi9e=^js@b()_&a*ttwpeg4n*#(l50enn5u8k'
 
-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'frozen-basin-47124.herokuapp.com',
+]
 
 # Application definition
 
