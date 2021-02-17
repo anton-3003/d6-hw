@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block title %}Форма добавления друга{% endblock%}
+
+{% block content %}
+	<h4>Введите данные друга</h4>
+<!--	<form method="post">-->
+<!--		{% csrf_token %}-->
+<!--&lt;!&ndash;		<div class="form-group">&ndash;&gt;-->
+<!--		<table>-->
+<!--			{{ form.as_table }}-->
+<!--		</table>-->
+<!--&lt;!&ndash;		</div>&ndash;&gt;-->
+<!--		<input type="submit" class="btn btn-primary" value="Сохранить">-->
+<!--	</form>-->
+
+<form action="" method="post">
+	{% csrf_token %}
+	<table>
+<!--		{{ form.as_table}}-->
+		<div>
+			{{ form.name.as_table }}
+				<label>Имя:{{ form.name }}</label>
+			{{ endform }}
+		</div>
+		<div>
+			{{ form.phone_number.as_table }}
+				<label>№ телефона: {{ form.phone_number}}</label>
+			{{ form.subject }}
+		</div>
+		<div>
+			{{ form.e_mail.as_table }}
+				<label>Эл.почта: {{ form.e_mail}}</label>
+			{{ form.subject }}
+		</div>
+	</table>
+	<input type="submit" class="btn btn-primary" value="Сохранить">
+</form>
+
+{% endblock %}}

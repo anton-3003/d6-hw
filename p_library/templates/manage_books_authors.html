@@ -1,23 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="  UTF-8">
-<title>Create multiple Authors and Books</title>
-</head>
-<body>
+{% extends "base.html" %}
+
+{% block title %}Create multiple Authors and Books{% endblock%}
+
+{% block content %}
+<h4>Введите данные автора и книги</h4>
+
 <form method="post">
-{% csrf_token %}
-{{ author_formset.management_form }}
-{% for form in author_formset %}
-{{ form.as_p }}
-<br>
-{% endfor %}
-{{ book_formset.management_form }}
-{% for form in book_formset %}
-{{ form.as_ul }}
-<br>
-{% endfor %}
-<input type="submit" value="Сохранить"/>
+    {% csrf_token %}
+    {{ author_formset.management_form }}
+        {% for form in author_formset %}
+            {{ form.as_p }}
+        {% endfor %}
+    <input type="submit" value="Сохранить автора"class="btn btn-primary" />
 </form>
-</body>
-</html>
+<form method="post">
+    {% csrf_token %}
+    {{ book_formset.management_form }}
+        {% for form in book_formset %}
+            {{ form.as_p }}
+    <br>
+        {% endfor %}
+    <input type="submit" value="Сохранить книгу"class="btn btn-primary mb-5" />
+</form>
+
+{% endblock %}

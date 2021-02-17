@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %}Библиотека{% endblock%}
+
+{% block content %}
+<h4>Книги у друзей</h4>
+
+
+<!--<table border="1" class="table table-bordered table-striped mt-5">-->
+<!--    <thead>-->
+<!--        <tr>-->
+<!--            <th scope="col">Имя</th>-->
+<!--            <th scope="col">№ телефона</th>-->
+<!--            <th scope="col">эл. почта</th>-->
+<!--        </tr>-->
+<!--    </thead>-->
+<!--    {% for friend in friends %}-->
+<!--        <tr>-->
+<!--            <td>{{ friend.name }}</td>-->
+<!--            <td>{{ friend.phone_number }}</td>-->
+<!--            <td>{{ friend.e_mail }}</td>-->
+<!--        </tr>-->
+<!--    {% endfor %}-->
+<!--</table>-->
+
+    <div class="col-md-6">
+        <ul class="list-group list-group-flush">
+            {% for friend in friends %}
+                <li class="list-group-item"><h6>{{ friend }}</h6>
+                    <ul class="list-group">
+                        <li class="list-group-item">{{ friend.book }}</li>
+                    </ul>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+
+
+
+{% endblock %}

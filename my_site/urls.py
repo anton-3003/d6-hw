@@ -1,14 +1,14 @@
 from django.contrib import admin
 from django.urls import path, include
+from django.conf.urls.static import static
+from django.conf import settings
 from p_library import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # path('', views.books_list),
     path('', include('p_library.urls')),
-    # path('', views.main_page),
-    path('index/', views.index),
     path('index/book_increment/', views.book_increment),
     path('index/book_decrement/', views.book_decrement),
-    path('publisher/', views.publishers),
 ]
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
