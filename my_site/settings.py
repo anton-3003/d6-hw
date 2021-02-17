@@ -127,7 +127,9 @@ USE_TZ = True
 # STATIC_URL = '/asset-v1:SkillFactory+PWS-9.1+06DEC2019+type@asset+block@/'
 
 STATIC_DIR = os.path.join(BASE_DIR, "static")
-STATICFILES_DIRS = [STATIC_DIR, ]
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
