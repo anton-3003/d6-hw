@@ -7,8 +7,8 @@ user - **student** password - **sf12educ**
 2. Качаем архив **[Отсюда](https://github.com/anton-3003/d6-hw/archive/main.zip)**          
 3. Распаковываем в папке *test_dir*         
 4. Открываем консоль и выбираем эту директорию      
-5. Создаем виртуальное окружение. Называем, например, *v_test*      ***DISC:\\..\\test_dir>python -m venv v_test***         
-6. Активируем вирт. окружение. ***DISC:\\..\\test_dir>v_test\scripts\activate.bat***        
+5. Создаем виртуальное окружение. Называем, например, *v_test*          DISC:\\..\\test_dir>***python -m venv v_test***         
+6. Активируем виртуальное окружение:    DISC:\\..\\test_dir>***v_test\scripts\activate.bat***        
 Строка примет вид *(v_test) DISC:\\..\\test_dir>*           
 7. Переходим в распакованную папку с проектом и устанавливаем зависимости: ***pip install -r requirements.txt***           
 8. Запускаем локальный сервер:  ***python manage.py runserver***            
