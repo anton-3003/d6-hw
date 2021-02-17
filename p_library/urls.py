@@ -5,7 +5,7 @@ from p_library import views
 app_name = 'p_library'
 urlpatterns = [
     # path('', views.main_page, name='main_page'),
-    path('', views.index),
+    path('', views.index, name='index'),
     path('author/create/', AuthorAdd.as_view(), name='author_create'),
     path('author/', AuthorList.as_view(), name='author_list'),
     path('author/create_many/', author_create_many, name='author_create_many'),
