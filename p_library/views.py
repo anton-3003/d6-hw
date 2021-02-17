@@ -59,7 +59,7 @@ def book_decrement(request):
     else:
         return redirect('/index/')
 
-
+# Список всех издательств
 def publishers(request):
     template = loader.get_template('publisher.html')
     publishers = Publisher.objects.all()
@@ -81,7 +81,7 @@ class PublisherCreate(CreateView):
 class BookAdd(CreateView):
     model = Book
     form_class = BookForm
-    success_url = reverse_lazy('p_library:main_page')
+    success_url = reverse_lazy('p_library:index')
     template_name = 'manage_book.html'
 
 # def book_add(request):
@@ -95,36 +95,36 @@ class BookAdd(CreateView):
 #             return HttpResponse('Изображение загружено')
 #         else:
 #             print(form.errors)
-#         return reverse_lazy('p_library:main_page')
+#         return reverse_lazy('p_library:index')
 
-
+# Редактирование книги
 class BookEdit(UpdateView):
     model = Book
     form_class = BookForm
-    success_url = reverse_lazy('p_library:main_page')
+    success_url = reverse_lazy('p_library:index')
     template_name = 'book_edit.html'
 
-
+# Удаление книги
 class BookDelete(DeleteView):
     model = Book
     form_class = BookForm
     fields = ["title", "author"]
-    success_url = reverse_lazy('p_library:main_page')
+    success_url = reverse_lazy('p_library:index')
     template_name = 'book_delete.html'
 
-
+# Добавление автора
 class AuthorAdd(CreateView):
     model = Author
     form_class = AuthorForm
     success_url = reverse_lazy('p_library:author_list')
     template_name = 'author_add.html'
 
-
+# Список авторов
 class AuthorList(ListView):
     model = Author
     template_name = 'author_list.html'
 
-
+# Добавление читателя
 class FriendAdd(CreateView):
     model = Friend
     form_class = FriendForm
