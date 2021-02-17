@@ -31,7 +31,7 @@ SECRET_KEY = '8o7*^_31s87r*xi9e=^js@b()_&a*ttwpeg4n*#(l50enn5u8k'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'immense-beyond-39470.herokuapp.com',
+    'frozen-basin-47124.herokuapp.com',
     '127.0.0.1'
 ]
 
